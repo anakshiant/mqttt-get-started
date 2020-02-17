@@ -19,6 +19,11 @@ client.on("connect", function() {
   console.log("connected");
 });
 
+// create a device which will save client indexed by it's mac address // req {macAddress:"xxxx"}
+app.use("*", (req, res, next) => {
+  console.log(req.originalUrl);
+  next();
+});
 // create a device which will save client indexed by it's mac address
 // req {macAddress:"xxxx"}
 app.post("/", (req, res) => {
