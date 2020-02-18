@@ -35,7 +35,7 @@ export default class userModel extends BaseModel {
   async login(userInformation) {
     try {
       const user = await this.model.findOne({
-        username: userInformation.username
+        email: userInformation.email
       });
 
       if (!user) {

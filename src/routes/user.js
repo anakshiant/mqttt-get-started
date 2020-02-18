@@ -26,7 +26,7 @@ export const login = route(async (req, res) => {
     const userInformation = req.body;
     if (
       !userInformation ||
-      !userInformation.username ||
+      !userInformation.email ||
       !userInformation.password
     ) {
       throw {

@@ -5,7 +5,7 @@ import express from "express";
 import compression from "compression";
 import cors from "cors";
 import helmet from "helmet";
-
+import path from "path";
 import { ApplicationError } from "./lib/errors";
 // import { verify as verifyMiddleware } from "./routes/sessions";
 import { create as signupUser, login as loginUserRoutes } from "./routes/user";
@@ -74,13 +74,20 @@ export default function createRouter() {
   router.post("/signup", signupUser);
 
   router.post("/login", loginUserRoutes);
-
+  router.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname, "/login.html"));
+  });
+  router.get("/token", (req, res) => {
+    console.log(req.url);
+    res.json({ token: "aakarsh" });
+  });
   // ******************
   // * ERROR HANDLING *
   // ******************
 
   // 404 route
   router.all("/*", (req, res, next) => {
+    console.log(req.baseUrl);
     next(new ApplicationError("Not Found", 404));
   });
 
