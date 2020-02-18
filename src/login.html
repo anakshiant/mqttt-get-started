@@ -105,7 +105,7 @@
       console.log(resultJson);
       window.location.href =
         queryParse["redirect_uri"] +
-        `?code=${resultJson.token}&state=${queryParse["state"]}`;
+        `?code=${resultJson.results.token}&state=${queryParse["state"]}`;
     }
     function signup() {
       window.location.href =
