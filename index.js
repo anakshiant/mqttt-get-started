@@ -26,7 +26,7 @@ app.use("*", (req, res, next) => {
 });
 
 app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname + "/index.html"));
+  res.sendFile(path.join(__dirname + "/login.html"));
 });
 // create a device which will save client indexed by it's mac address
 // req {macAddress:"xxxx"}
