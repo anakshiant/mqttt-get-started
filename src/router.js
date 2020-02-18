@@ -50,13 +50,13 @@ export default function createRouter() {
    * returns. This middleware applies it to all subsequently
    * defined routes.
    */
-  router.get("/*", (req, res, next) => {
+  router.get("*", (req, res, next) => {
     console.log(req.baseUrl);
-    res.set({
-      "Last-Modified": new Date().toUTCString(),
-      Expires: -1,
-      "Cache-Control": "must-revalidate, private"
-    });
+    // res.set({
+    //   "Last-Modified": new Date().toUTCString(),
+    //   Expires: -1,
+    //   "Cache-Control": "must-revalidate, private"
+    // });
     next();
   });
 
