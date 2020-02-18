@@ -51,7 +51,7 @@ export default function createRouter() {
    * defined routes.
    */
   router.use("*", (req, res, next) => {
-    console.log(req.baseUrl);
+    console.log(req);
     // res.set({
     //   "Last-Modified": new Date().toUTCString(),
     //   Expires: -1,
