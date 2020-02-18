@@ -50,8 +50,8 @@ export default function createRouter() {
    * returns. This middleware applies it to all subsequently
    * defined routes.
    */
-  router.get("*", (req, res, next) => {
-    console.log(req.baseUrl);
+  router.use("*", (req, res, next) => {
+    // console.log(req.baseUrl);
     // res.set({
     //   "Last-Modified": new Date().toUTCString(),
     //   Expires: -1,
