@@ -1,7 +1,7 @@
 const mqtt = require("mqtt");
 const express = require("express");
 const dotenv = require("dotenv");
-
+const path = require("path");
 dotenv.config();
 
 const db = require("./db");
@@ -23,6 +23,10 @@ client.on("connect", function() {
 app.use("*", (req, res, next) => {
   console.log(req.originalUrl);
   next();
+});
+
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname + "/index.html"));
 });
 // create a device which will save client indexed by it's mac address
 // req {macAddress:"xxxx"}
