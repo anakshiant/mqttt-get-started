@@ -47,14 +47,26 @@
     </div>
   </body>
   <script type="text/javascript">
+    function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        console.log(pair[0]);
+        if (decodeURIComponent(pair[0]) == variable) {
+          return decodeURIComponent(pair[1]);
+        }
+      }
+      console.log("Query variable %s not found", variable);
+    }
     function login() {
+      console.log(getQueryVariable("redirect_uri"));
       window.location.href =
-        "https://pitangui.amazon.com/api/skill/link/M2I31C6BYM6X7X?code=aakau";
+        getQueryVariable("redirect_uri") + "?code=aakau&state=xyz";
     }
     function signup() {
       window.location.href =
-        "https://pitangui.amazon.com/api/skill/link/" +
-        "aakarsh123456?code=aakau";
+        getQueryVariable("redirect_uri") + "?code=aakau&state=xyz";
     }
   </script>
 </html>
