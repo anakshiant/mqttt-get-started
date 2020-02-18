@@ -1,0 +1,49 @@
+{
+  "name": "coldstoragebackend",
+  "version": "1.0.0",
+  "description": "A simple app for cold storage management",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node --presets babel-preset-env",
+    "start:qa": "nodemon src/index.js --exec babel-node --presets babel-preset-env",
+    "test": "echo test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaku14n/coldstoragebackend.git"
+  },
+  "author": "aakarsh yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaku14n/coldstoragebackend/issues"
+  },
+  "homepage": "https://github.com/aaku14n/coldstoragebackend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "crypto-js": "^3.1.9-1",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "express": "^4.16.4",
+    "express-force-ssl": "^0.3.2",
+    "helmet": "^3.15.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.14",
+    "uuid": "^3.3.2",
+    "winston": "^3.1.0",
+    "dotenv": "^8.2.0",
+    "mqtt": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.7"
+  }
+}
