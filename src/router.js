@@ -51,6 +51,7 @@ export default function createRouter() {
    * defined routes.
    */
   router.get("/*", (req, res, next) => {
+    console.log(req.baseUrl);
     res.set({
       "Last-Modified": new Date().toUTCString(),
       Expires: -1,
@@ -75,9 +76,10 @@ export default function createRouter() {
 
   router.post("/login", loginUserRoutes);
   router.get("/login", (req, res) => {
+    c;
     res.sendFile(path.join(__dirname, "/login.html"));
   });
-  router.get("/token", (req, res) => {
+  router.post("/token", (req, res) => {
     console.log(req.url);
     res.json({ token: "aakarsh" });
   });
