@@ -80,7 +80,7 @@ export default function createRouter() {
   });
   router.post("/token", (req, res) => {
     console.log(req.url);
-    res.json({ token: "aakarsh" });
+    res.json({ access_token: "aakarsh", refresh_token: "aakarsh" });
   });
   // ******************
   // * ERROR HANDLING *
